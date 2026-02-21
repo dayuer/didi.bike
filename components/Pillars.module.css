@@ -1,0 +1,83 @@
+.pillars {
+  background: var(--color-bg-secondary);
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 212, 255, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  padding: 2.5rem;
+  position: relative;
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.icon {
+  font-size: 1.8rem;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: rgba(0, 212, 255, 0.06);
+  line-height: 1;
+}
+
+.cardTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+
+.cardDesc {
+  font-size: 0.925rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.cardLine {
+  margin-top: 2rem;
+  width: 40px;
+  height: 2px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+  transition: width 0.4s var(--ease-out);
+}
+
+.card:hover .cardLine {
+  width: 80px;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}

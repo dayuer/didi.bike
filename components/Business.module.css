@@ -1,0 +1,189 @@
+.business {
+  background: var(--color-bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at 30% 80%, rgba(0, 212, 255, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* 统计 */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.statBox {
+  padding: 2rem 1rem;
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: all 0.3s var(--ease-out);
+}
+
+.statBox:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow);
+}
+
+.statNum {
+  font-family: var(--font-mono);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* 方案卡片 */
+.plansGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.planCard {
+  padding: 2.5rem 2rem;
+  position: relative;
+}
+
+.planTag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: var(--color-accent-dim);
+  padding: 4px 10px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.25rem;
+}
+
+.planTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+
+.planDesc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.planMetrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.planMetric {
+  padding: 0.75rem 0.5rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-glass);
+  border-radius: 6px;
+  text-align: center;
+}
+
+.pmValue {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 0.2rem;
+}
+
+.pmUnit {
+  display: block;
+  font-size: 0.6rem;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.planFeatures {
+  list-style: none;
+}
+
+.planFeatures li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  position: relative;
+}
+
+.planFeatures li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-size: 0.8rem;
+}
+
+/* CTA */
+.ctaBlock {
+  text-align: center;
+  padding: 3.5rem;
+  background: var(--gradient-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.ctaBlock h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+
+.ctaBlock p {
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .plansGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .statsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .planMetrics {
+    grid-template-columns: 1fr;
+  }
+}

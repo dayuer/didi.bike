@@ -1,0 +1,409 @@
+/* ============================================
+   DIDI.BIKE — Global Design System
+   Premium Dark Theme with Cyan-Blue Accents
+   ============================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+
+:root {
+  /* Color System */
+  --color-bg-primary: #050a12;
+  --color-bg-secondary: #0a1020;
+  --color-bg-tertiary: #0f172a;
+  --color-bg-card: rgba(15, 23, 42, 0.6);
+  --color-bg-glass: rgba(15, 23, 42, 0.4);
+
+  --color-accent: #00d4ff;
+  --color-accent-dim: rgba(0, 212, 255, 0.15);
+  --color-accent-glow: rgba(0, 212, 255, 0.4);
+  --color-accent-secondary: #7c3aed;
+  --color-accent-secondary-dim: rgba(124, 58, 237, 0.15);
+
+  --color-text-primary: #f0f6ff;
+  --color-text-secondary: #94a3b8;
+  --color-text-tertiary: #64748b;
+  --color-text-accent: #00d4ff;
+
+  --color-border: rgba(148, 163, 184, 0.1);
+  --color-border-hover: rgba(0, 212, 255, 0.3);
+  --color-border-glass: rgba(148, 163, 184, 0.06);
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(
+    180deg,
+    #050a12 0%,
+    #0a1628 50%,
+    #050a12 100%
+  );
+  --gradient-accent: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+  --gradient-card: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.05) 0%,
+    rgba(124, 58, 237, 0.05) 100%
+  );
+  --gradient-text: linear-gradient(135deg, #f0f6ff 0%, #94a3b8 100%);
+  --gradient-glow: radial-gradient(
+    ellipse at center,
+    rgba(0, 212, 255, 0.15) 0%,
+    transparent 70%
+  );
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.2);
+  --shadow-glow-strong: 0 0 60px rgba(0, 212, 255, 0.35);
+
+  /* Typography */
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+
+  /* Spacing */
+  --section-padding: clamp(80px, 12vw, 140px);
+  --container-max: 1200px;
+  --container-wide: 1400px;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 0.2s;
+  --duration-normal: 0.4s;
+  --duration-slow: 0.8s;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+}
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--duration-fast) ease;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ---- Container ---- */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 40px);
+}
+
+.container-wide {
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 40px);
+}
+
+/* ---- Typography ---- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--color-text-primary);
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-out);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--gradient-accent);
+  color: var(--color-bg-primary);
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-hover);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: var(--color-accent-dim);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-accent);
+  padding: 8px 0;
+}
+
+.btn-ghost:hover {
+  color: var(--color-text-primary);
+}
+
+.btn-ghost .arrow {
+  transition: transform var(--duration-fast) ease;
+}
+
+.btn-ghost:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* ---- Section Common ---- */
+.section {
+  padding: var(--section-padding) 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1.25rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-desc {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ---- Glass Card ---- */
+.glass-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--gradient-card);
+  opacity: 0;
+  transition: opacity var(--duration-normal) ease;
+  pointer-events: none;
+}
+
+.glass-card:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+/* ---- Glow Orbs (background decorations) ---- */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+/* ---- Selection ---- */
+::selection {
+  background: var(--color-accent-dim);
+  color: var(--color-accent);
+}
+
+/* ---- Animations ---- */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Intersection observer animation classes */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-out);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-on-scroll.delay-1 {
+  transition-delay: 0.1s;
+}
+.animate-on-scroll.delay-2 {
+  transition-delay: 0.2s;
+}
+.animate-on-scroll.delay-3 {
+  transition-delay: 0.3s;
+}
+.animate-on-scroll.delay-4 {
+  transition-delay: 0.4s;
+}
+.animate-on-scroll.delay-5 {
+  transition-delay: 0.5s;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+}

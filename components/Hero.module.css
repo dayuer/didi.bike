@@ -1,0 +1,345 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-primary);
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 背景光晕 */
+.glowA {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  top: -200px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glowB {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  bottom: -100px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 内容布局 */
+.content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.left {
+  max-width: 600px;
+}
+
+/* 标语 */
+.tagline {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  margin-bottom: 1.5rem;
+  padding: 6px 14px;
+  border: 1px solid var(--color-accent-dim);
+  border-radius: 100px;
+  background: rgba(0, 212, 255, 0.05);
+}
+
+.title {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+.highlight {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+/* 微数据指标 */
+.metrics {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metricValue {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.metricLabel {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.divider {
+  width: 1px;
+  height: 32px;
+  background: var(--color-border);
+}
+
+/* 传感器视觉 */
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sensorVisual {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  border-radius: 50%;
+  animation: rotate-slow 20s linear infinite;
+}
+
+.ring::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--color-accent);
+}
+
+.ring2 {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border: 1px dashed rgba(124, 58, 237, 0.12);
+  border-radius: 50%;
+  animation: rotate-slow 15s linear infinite reverse;
+}
+
+.sensorBody {
+  width: 180px;
+  height: 56px;
+  background: linear-gradient(135deg, #141c2e 0%, #0a1020 100%);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow:
+    0 0 40px rgba(0, 212, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  animation: float 6s ease-in-out infinite;
+}
+
+.sensorLed {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 6px;
+  height: 6px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-accent);
+  animation: pulse-glow 1.5s infinite ease-in-out;
+}
+
+.sensorChips {
+  display: flex;
+  gap: 6px;
+}
+
+.sensorChips span {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 600;
+  padding: 3px 6px;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 4px;
+  color: var(--color-accent);
+  letter-spacing: 0.02em;
+}
+
+/* 滚动指示器 */
+.scrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.scrollIndicator span {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background: var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollDot {
+  width: 1px;
+  height: 12px;
+  background: var(--color-accent);
+  position: absolute;
+  top: -12px;
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+  0% { top: -12px; }
+  100% { top: 40px; }
+}
+
+/* 响应式 */
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .left {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subtitle {
+    max-width: 100%;
+  }
+
+  .cta {
+    justify-content: center;
+  }
+
+  .metrics {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .right {
+    order: -1;
+  }
+
+  .sensorVisual {
+    width: 280px;
+    height: 280px;
+  }
+
+  .ring {
+    width: 240px;
+    height: 240px;
+  }
+
+  .ring2 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .sensorBody {
+    width: 150px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .metrics {
+    gap: 1rem;
+  }
+
+  .metricValue {
+    font-size: 1rem;
+  }
+
+  .divider {
+    height: 24px;
+  }
+}

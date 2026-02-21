@@ -1,0 +1,126 @@
+.legal {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  background: var(--color-bg-primary);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* 导航返回 */
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+  transition: opacity 0.3s ease;
+}
+
+.backLink:hover {
+  opacity: 0.8;
+}
+
+/* 内容排版 */
+.content h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+}
+
+.content h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-primary);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+.content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-primary);
+}
+
+.content p {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.content strong {
+  color: var(--color-text-primary);
+}
+
+.content ul,
+.content ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.content li {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+.content a {
+  color: var(--color-accent);
+  transition: opacity 0.3s ease;
+}
+
+.content a:hover {
+  opacity: 0.8;
+}
+
+/* 表格 */
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.content th,
+.content td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.85rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.content th {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.content td {
+  color: var(--color-text-secondary);
+}
+
+/* 日期 */
+.effectiveDate {
+  font-size: 0.85rem;
+  color: var(--color-text-tertiary);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}

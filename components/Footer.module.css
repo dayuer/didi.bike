@@ -1,0 +1,148 @@
+.footer {
+  background: var(--color-bg-secondary);
+  padding: 5rem 0 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* 品牌 */
+.brand {
+  max-width: 280px;
+}
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  gap: 2px;
+  margin-bottom: 1rem;
+}
+
+.logoMark {
+  font-size: 1.3rem;
+  color: var(--color-text-primary);
+  letter-spacing: 0.08em;
+}
+
+.logoDot {
+  font-size: 1.3rem;
+  color: var(--color-accent);
+}
+
+.logoSub {
+  font-size: 0.85rem;
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.08em;
+}
+
+.brandDesc {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.brandSub {
+  font-size: 0.8rem;
+  color: var(--color-text-tertiary);
+}
+
+/* 列 */
+.col {}
+
+.colTitle {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.col ul {
+  list-style: none;
+}
+
+.col ul li {
+  margin-bottom: 0.6rem;
+}
+
+.col ul a {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.col ul a:hover {
+  color: var(--color-text-primary);
+  transform: translateX(4px);
+}
+
+/* 社交 */
+.socialLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.socialLink {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  transition: color 0.3s ease;
+}
+
+.socialLink:hover {
+  color: var(--color-accent);
+}
+
+/* 免责声明 */
+.disclaimer {
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--color-border-glass);
+  border-radius: var(--radius-sm);
+  margin-bottom: 2rem;
+}
+
+.disclaimer p {
+  font-size: 0.7rem;
+  color: var(--color-text-tertiary);
+  line-height: 1.8;
+}
+
+/* 底部 */
+.bottom {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.bottom p {
+  font-size: 0.8rem;
+  color: var(--color-text-tertiary);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
