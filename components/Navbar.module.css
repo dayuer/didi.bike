@@ -25,12 +25,23 @@
 /* Logo */
 .logo {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   font-family: var(--font-mono);
   font-weight: 700;
   text-decoration: none;
-  gap: 2px;
+  gap: 4px;
   z-index: 10;
+}
+
+.logoImg {
+  height: 32px;
+  width: auto;
+  margin-right: 6px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logoImg {
+  transform: scale(1.05);
 }
 
 .logoMark {
