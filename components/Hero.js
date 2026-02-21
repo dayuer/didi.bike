@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import styles from './Hero.module.css';
+import SensorSVG from './SensorSVG';
 
 export default function Hero() {
   const canvasRef = useRef(null);
@@ -123,20 +124,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* 传感器视觉 */}
+        {/* 传感器 SVG 动画 */}
         <div className={styles.right}>
-          <div className={styles.sensorVisual}>
-            <div className={styles.ring} />
-            <div className={styles.ring2} />
-            <div className={styles.sensorBody}>
-              <div className={styles.sensorLed} />
-              <div className={styles.sensorChips}>
-                <span>6-Axis IMU</span>
-                <span>Barometer</span>
-                <span>Strain</span>
-              </div>
-            </div>
-          </div>
+          <SensorSVG />
         </div>
       </div>
 
