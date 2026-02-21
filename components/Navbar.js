@@ -32,10 +32,7 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} aria-label="Main navigation">
       <div className={`container ${styles.inner}`}>
         <a href="#home" className={styles.logo} onClick={(e) => handleLinkClick(e, '#home')}>
-          <img src="/logo-icon.png" alt="DIDI.BIKE" className={styles.logoImg} />
-          <span className={styles.logoMark}>DIDI</span>
-          <span className={styles.logoDot}>.</span>
-          <span className={styles.logoSub}>BIKE</span>
+          <img src="/logo-wordmark.png" alt="DIDI.BIKE" className={styles.logoImg} />
         </a>
 
         <ul className={`${styles.menu} ${menuOpen ? styles.menuOpen : ''}`}>
