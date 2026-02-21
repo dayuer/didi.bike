@@ -23,6 +23,8 @@ export default function SensorSVG() {
       viewBox="0 0 500 500"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="DIDI.BIKE Sensor — 14g cycling telemetry device with 6-axis IMU, barometer, gyroscope, and strain gauge"
       style={{ width: '100%', height: '100%', maxWidth: 500 }}
     >
       <defs>

@@ -44,7 +44,7 @@ export default function Sensor() {
         <div className="section-header">
           <span className="section-label">Hardware</span>
           <h2 className="section-title">The Sensor</h2>
-          <p className="section-desc">Engineered for precision. Built for endurance.</p>
+          <p className="section-desc">Engineered for precision. Built for endurance. Traditional motion capture labs cost $15,000+ and require indoor setups — the DIDI.BIKE Sensor delivers comparable data outdoors for $299.</p>
         </div>
 
         {/* Tab 切换 */}

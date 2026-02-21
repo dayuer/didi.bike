@@ -65,7 +65,7 @@ export default function Footer() {
             <h4 className={styles.colTitle}>Connect</h4>
             <div className={styles.socialLinks}>
               {SOCIAL_LINKS.map((l) => (
-                <a key={l.label} href={l.href} className={styles.socialLink}>{l.label}</a>
+                <a key={l.label} href={l.href} className={styles.socialLink} rel="nofollow noopener noreferrer">{l.label}</a>
               ))}
             </div>
           </div>

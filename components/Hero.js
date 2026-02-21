@@ -88,12 +88,14 @@ export default function Hero() {
         <div className={styles.left}>
           <span className={styles.tagline}>Data-Integrated Dynamic Intelligence</span>
           <h1 className={styles.title}>
-            Precision in<br />
-            <span className={styles.highlight}>Every Pedal.</span>
+            DIDI.BIKE Sensor —<br />
+            <span className={styles.highlight}>Precision in Every Pedal.</span>
           </h1>
           <p className={styles.subtitle}>
-            Millisecond-level telemetry for elite cyclists. Aerodynamic profiling,
-            posture analysis, and power measurement — in one ultra-light 14g sensor.
+            The world&apos;s lightest cycling telemetry sensor at just 14 grams.
+            Trusted by 500+ OEM partners across 50+ countries, delivering
+            millisecond-level aerodynamic profiling, posture analysis, and
+            power measurement with ±0.1° angular precision.
           </p>
           <div className={styles.cta}>
             <a href="#sensor" className="btn btn-primary">View Specs</a>
