@@ -28,7 +28,7 @@ export default function Footer() {
           {/* 品牌 */}
           <div className={styles.brand}>
             <div className={styles.logo}>
-              <img src="/logo-wordmark.png" alt="DIDI.BIKE" style={{ height: 40, width: 'auto' }} />
+              <img src="/logo-wordmark.png" alt="DIDI.BIKE" style={{ height: 64, width: 'auto' }} />
             </div>
             <p className={styles.brandDesc}>Data-Integrated Dynamic Intelligence</p>
             <p className={styles.brandSub}>Precision cycling telemetry hardware</p>
