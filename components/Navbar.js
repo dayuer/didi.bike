@@ -29,7 +29,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+    <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} aria-label="Main navigation">
       <div className={`container ${styles.inner}`}>
         <a href="#home" className={styles.logo} onClick={(e) => handleLinkClick(e, '#home')}>
           <span className={styles.logoMark}>DIDI</span>

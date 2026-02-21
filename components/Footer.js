@@ -39,21 +39,25 @@ export default function Footer() {
           {/* 快速链接 */}
           <div className={styles.col}>
             <h4 className={styles.colTitle}>Quick Links</h4>
-            <ul>
-              {QUICK_LINKS.map((l) => (
-                <li key={l.href}><a href={l.href}>{l.label}</a></li>
-              ))}
-            </ul>
+            <nav aria-label="Quick links">
+              <ul>
+                {QUICK_LINKS.map((l) => (
+                  <li key={l.href}><a href={l.href}>{l.label}</a></li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
           {/* 法律 */}
           <div className={styles.col}>
             <h4 className={styles.colTitle}>Legal</h4>
-            <ul>
-              {LEGAL_LINKS.map((l) => (
-                <li key={l.href}><a href={l.href}>{l.label}</a></li>
-              ))}
-            </ul>
+            <nav aria-label="Legal pages">
+              <ul>
+                {LEGAL_LINKS.map((l) => (
+                  <li key={l.href}><a href={l.href} rel="nofollow">{l.label}</a></li>
+                ))}
+              </ul>
+            </nav>
           </div>
 
           {/* 社交 */}

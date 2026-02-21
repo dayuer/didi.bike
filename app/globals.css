@@ -3,7 +3,7 @@
    Premium Dark Theme with Cyan-Blue Accents
    ============================================ */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+/* Fonts loaded via next/font in layout.js for optimal performance */
 
 :root {
   /* Color System */
@@ -55,10 +55,10 @@
   --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.2);
   --shadow-glow-strong: 0 0 60px rgba(0, 212, 255, 0.35);
 
-  /* Typography */
+  /* Typography — CSS vars set by next/font in layout.js */
   --font-sans:
-    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+    var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-jetbrains), "Fira Code", "Cascadia Code", monospace;
 
   /* Spacing */
   --section-padding: clamp(80px, 12vw, 140px);
