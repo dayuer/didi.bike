@@ -86,10 +86,10 @@ export default function Hero() {
 
       <div className={`container ${styles.content}`}>
         <div className={styles.left}>
-          <span className={styles.tagline}>Data-Integrated Dynamic Intelligence</span>
+          <span className={styles.tagline}>DIDI.BIKE Sensor</span>
           <h1 className={styles.title}>
-            DIDI.BIKE Sensor —<br />
-            <span className={styles.highlight}>Precision in Every Pedal.</span>
+            Precision in<br />
+            <span className={styles.highlight}>Every Pedal.</span>
           </h1>
           <p className={styles.subtitle}>
             The world&apos;s lightest cycling telemetry sensor at just 14 grams.
