@@ -35,7 +35,8 @@
 
 .logoImg {
   height: 80px;
-  width: auto;
+  width: 220px;
+  object-fit: contain;
   margin-right: 6px;
   transition: transform 0.3s ease;
 }
