@@ -6,12 +6,19 @@ export const metadata = {
   title: 'Technology — How Real-Time CdA Measurement Works',
   description:
     'Deep dive into the DIDI.BIKE Sensor technology: 6-axis IMU at 100Hz, real-time CdA drag measurement, and biomechanical posture analysis. No wind tunnel required.',
+  keywords: [
+    'CdA measurement', 'cycling aerodynamics', 'real-time drag sensor', '6-axis IMU cycling',
+    'aerodynamic profiling', 'wind tunnel alternative', 'cycling sensor technology',
+    'Bosch BMI270', 'barometric altitude cycling', 'Kalman filter cycling',
+    'cycling drag coefficient', 'bike aerodynamics testing',
+  ],
   alternates: { canonical: '/technology' },
   openGraph: {
     title: 'DIDI.BIKE Technology — Real-Time CdA Measurement',
     description:
       'How we measure aerodynamic drag on your bike, outdoors, in real time. 6-axis IMU, barometric altitude, strain gauges — all in 14 grams.',
     url: 'https://didi.bike/technology',
+    type: 'article',
   },
 };
 

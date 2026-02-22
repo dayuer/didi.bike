@@ -6,7 +6,19 @@ export const metadata = {
   title: 'FAQ — Common Questions About the DIDI.BIKE Sensor',
   description:
     'Answers to the most common questions about the DIDI.BIKE Sensor: how CdA is measured, battery life, compatibility, accuracy, and more.',
+  keywords: [
+    'cycling sensor FAQ', 'CdA measurement accuracy', 'cycling power meter questions',
+    'ANT+ Bluetooth sensor compatibility', 'cycling sensor battery life',
+    'bike fitting sensor', 'cycling aerodynamics FAQ', 'how to choose cycling sensor',
+    'wind tunnel vs sensor accuracy', 'OEM cycling sensor program',
+  ],
   alternates: { canonical: '/faq' },
+  openGraph: {
+    title: 'DIDI.BIKE FAQ — Questions We Actually Get Asked',
+    description: 'Real questions from riders, fitters, and engineers about CdA measurement, compatibility, accuracy, and more.',
+    url: 'https://didi.bike/faq',
+    type: 'article',
+  },
 };
 
 const FAQS = [
@@ -72,9 +84,27 @@ const FAQS = [
   },
 ];
 
+// Generate FAQPage JSON-LD from the FAQS array
+const FAQ_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map((faq) => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
+
 export default function FaqPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+      />
       <Navbar />
       <main className={styles.main}>
         <section className={styles.hero}>

@@ -6,7 +6,19 @@ export const metadata = {
   title: 'Specifications — Full Technical Spec Sheet',
   description:
     'Complete specifications for the DIDI.BIKE Sensor: 14g weight, 6-axis IMU at 100Hz, ANT+ & Bluetooth LE 5.0, 40-hour battery, IPX7 waterproof. Full compatibility matrix.',
+  keywords: [
+    'cycling sensor specifications', 'ANT+ cycling sensor', 'Bluetooth bike sensor',
+    'cycling power meter specs', 'IPX7 cycling sensor', 'bike sensor battery life',
+    'Garmin compatible sensor', 'Wahoo compatible sensor', 'cycling sensor weight',
+    'nRF52840 cycling', 'FIT file cycling', 'cycling head unit compatibility',
+  ],
   alternates: { canonical: '/specs' },
+  openGraph: {
+    title: 'DIDI.BIKE Sensor Specifications',
+    description: '14g, 100Hz, ANT+ & BLE 5.0, 40-hour battery, IPX7. Full specs and compatibility matrix.',
+    url: 'https://didi.bike/specs',
+    type: 'article',
+  },
 };
 
 const SPECS = [

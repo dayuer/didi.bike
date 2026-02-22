@@ -6,7 +6,18 @@ export const metadata = {
   title: 'Use Cases — Who Uses the DIDI.BIKE Sensor',
   description:
     'Real-world applications: professional cycling teams, bike fitters, individual athletes, and OEM hardware partners. See how the DIDI.BIKE Sensor fits your workflow.',
+  keywords: [
+    'bike fitting technology', 'cycling performance data', 'OEM cycling sensor',
+    'pro cycling aerodynamics', 'bike fitter tools', 'cycling team technology',
+    'cycling sensor use cases', 'time trial aerodynamics', 'cycling position optimization',
+  ],
   alternates: { canonical: '/use-cases' },
+  openGraph: {
+    title: 'DIDI.BIKE Use Cases — Pro Teams, Fitters & Athletes',
+    description: 'How pro teams, bike fitters, and athletes use the DIDI.BIKE Sensor for real-world performance gains.',
+    url: 'https://didi.bike/use-cases',
+    type: 'article',
+  },
 };
 
 const CASES = [
