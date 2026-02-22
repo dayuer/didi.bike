@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
 
 const NAV_LINKS = [
-  { href: '#home', label: 'Home' },
   { href: '#sensor', label: 'The Sensor' },
-  { href: '#ecosystem', label: 'Ecosystem' },
-  { href: '#business', label: 'For Business' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/technology', label: 'Technology' },
+  { href: '/specs', label: 'Specs' },
+  { href: '/use-cases', label: 'Use Cases' },
+  { href: '/faq', label: 'FAQ' },
 ];
 
 export default function Navbar() {
@@ -22,10 +22,13 @@ export default function Navbar() {
   }, []);
 
   const handleLinkClick = (e, href) => {
-    e.preventDefault();
     setMenuOpen(false);
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    // Page links (e.g. /technology) navigate normally
   };
 
   return (

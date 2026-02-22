@@ -1,11 +1,11 @@
 import styles from './Footer.module.css';
 
 const QUICK_LINKS = [
-  { href: '#home', label: 'Home' },
-  { href: '#sensor', label: 'The Sensor' },
-  { href: '#ecosystem', label: 'Ecosystem' },
-  { href: '#business', label: 'For Business' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/', label: 'Home' },
+  { href: '/technology', label: 'Technology' },
+  { href: '/specs', label: 'Specifications' },
+  { href: '/use-cases', label: 'Use Cases' },
+  { href: '/faq', label: 'FAQ' },
 ];
 
 const LEGAL_LINKS = [

@@ -1,0 +1,25 @@
+.main { padding-top: 80px; background: var(--color-bg-primary); min-height: 100vh; }
+.hero { padding: 6rem 0 4rem; border-bottom: 1px solid var(--color-border); }
+.badge { display: inline-block; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.25em; padding: 6px 14px; border: 1px solid var(--color-accent-dim); border-radius: 100px; background: rgba(0,212,255,0.05); margin-bottom: 1.5rem; }
+.pageTitle { font-size: clamp(2.2rem,5vw,3.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.03em; color: var(--color-text-primary); }
+.accent { background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.heroDesc { font-size: 1.1rem; color: var(--color-text-secondary); line-height: 1.8; max-width: 680px; }
+
+.caseSection { padding: 5rem 0; }
+.sectionAlt { background: var(--color-bg-secondary); }
+
+.caseLayout { display: grid; grid-template-columns: 1fr 260px; gap: 4rem; align-items: start; }
+.caseTag { display: inline-block; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.75rem; }
+.caseTitle { font-size: clamp(1.4rem,3vw,2rem); font-weight: 700; color: var(--color-text-primary); margin-bottom: 1.5rem; line-height: 1.2; letter-spacing: -0.02em; }
+.casePara { font-size: 0.95rem; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 1.2rem; }
+
+.caseStats { display: flex; flex-direction: column; gap: 1.5rem; padding-top: 0.5rem; }
+.stat { display: flex; flex-direction: column; gap: 4px; padding: 1.25rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 12px; }
+.statValue { font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--color-text-primary); }
+.statLabel { font-size: 0.75rem; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; }
+
+@media (max-width: 768px) {
+  .caseLayout { grid-template-columns: 1fr; gap: 2rem; }
+  .caseStats { flex-direction: row; flex-wrap: wrap; }
+  .stat { flex: 1; min-width: 120px; }
+}
