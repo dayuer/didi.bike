@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
 
 const NAV_LINKS = [
-  { href: '#sensor', label: 'The Sensor' },
+  { href: '/#sensor', label: 'The Sensor' },
   { href: '/technology', label: 'Technology' },
   { href: '/specs', label: 'Specs' },
   { href: '/use-cases', label: 'Use Cases' },
@@ -23,18 +23,22 @@ export default function Navbar() {
 
   const handleLinkClick = (e, href) => {
     setMenuOpen(false);
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const el = document.querySelector(href);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (href.startsWith('/#')) {
+      // Anchor link like /#sensor — if we're on the homepage, smooth scroll
+      const hash = href.slice(1); // e.g. #sensor
+      if (window.location.pathname === '/') {
+        e.preventDefault();
+        const el = document.querySelector(hash);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      // Otherwise, navigate to / with the hash — browser handles it
     }
-    // Page links (e.g. /technology) navigate normally
   };
 
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} aria-label="Main navigation">
       <div className={`container ${styles.inner}`}>
-        <a href="#home" className={styles.logo} onClick={(e) => handleLinkClick(e, '#home')}>
+        <a href="/" className={styles.logo}>
           <img src="/logo-icon.png" alt="DIDI.BIKE" className={styles.logoImg} />
         </a>
 
@@ -47,7 +51,7 @@ export default function Navbar() {
             </li>
           ))}
           <li className={styles.ctaWrap}>
-            <a href="#contact" className={`btn btn-primary ${styles.cta}`} onClick={(e) => handleLinkClick(e, '#contact')}>
+            <a href="/#contact" className={`btn btn-primary ${styles.cta}`} onClick={(e) => handleLinkClick(e, '/#contact')}>
               Get Sensor
             </a>
           </li>
