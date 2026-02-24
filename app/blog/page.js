@@ -12,7 +12,7 @@ export const metadata = {
   openGraph: {
     title: "Blog | DIDI.BIKE",
     description: "Cycling technology insights, sensor innovation, and performance analytics.",
-    url: "https://didi.bike/blog",
+    url: "https://blog.didi.bike",
   },
 };
 
@@ -62,7 +62,7 @@ export default async function BlogPage() {
           {posts.map((post, i) => (
             <Link
               key={post.id}
-              href={`/blog/${post.slug}`}
+              href={`/${post.slug}`}
               className={`glass-card ${styles.card} animate-on-scroll delay-${Math.min(i + 1, 5)}`}
             >
               {post.cover ? (

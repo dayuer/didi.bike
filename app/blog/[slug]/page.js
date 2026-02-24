@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import styles from "./article.module.css";
 
 /**
- * 动态 metadata
+ * Dynamic metadata
  */
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${post.title} | DIDI.BIKE Blog`,
       description: post.excerpt || post.title,
-      url: `https://didi.bike/blog/${slug}`,
+      url: `https://blog.didi.bike/${slug}`,
       type: "article",
       publishedTime: post.publishedAt,
     },
@@ -51,7 +51,7 @@ export default async function ArticlePage({ params }) {
             <div className={styles.notFound}>
               <h1>Post Not Found</h1>
               <p>The article you are looking for does not exist.</p>
-              <Link href="/blog" className="btn btn-secondary">
+              <Link href="/" className="btn btn-secondary">
                 ← Back to Blog
               </Link>
             </div>
@@ -69,12 +69,12 @@ export default async function ArticlePage({ params }) {
       <Navbar />
       <article className={styles.articlePage}>
         <div className={styles.articleContainer}>
-          {/* 返回链接 */}
-          <Link href="/blog" className={styles.backLink}>
+          {/* Back link */}
+          <Link href="/" className={styles.backLink}>
             ← Back to Blog
           </Link>
 
-          {/* 文章头部 */}
+          {/* Article header */}
           <header className={styles.header}>
             <h1 className={styles.title}>{post.title}</h1>
             <div className={styles.meta}>
@@ -91,7 +91,7 @@ export default async function ArticlePage({ params }) {
             </div>
           </header>
 
-          {/* 封面 */}
+          {/* Cover */}
           {coverUrl && (
             <img
               src={coverUrl}
@@ -100,7 +100,7 @@ export default async function ArticlePage({ params }) {
             />
           )}
 
-          {/* 正文 */}
+          {/* Content */}
           <div
             className={styles.content}
             dangerouslySetInnerHTML={{ __html: post.content }}
