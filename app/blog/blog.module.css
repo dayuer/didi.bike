@@ -1,0 +1,186 @@
+/* ============================================
+   Blog listing page styles
+   Reuses global design system tokens from globals.css
+   ============================================ */
+
+.blogPage {
+  min-height: 100vh;
+  padding-top: 100px;
+  background: var(--color-bg-primary);
+}
+
+/* ---- Header ---- */
+.header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+  padding: 0 clamp(20px, 4vw, 40px);
+}
+
+.title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---- Tag filter bar ---- */
+.tagBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  padding: 0 clamp(20px, 4vw, 40px);
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+  text-transform: lowercase;
+}
+
+.tag:hover {
+  border-color: var(--color-border-hover);
+  color: var(--color-text-accent);
+}
+
+.tagActive {
+  border-color: var(--color-accent);
+  background: var(--color-accent-dim);
+  color: var(--color-text-accent);
+}
+
+/* ---- Post grid ---- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: clamp(1.25rem, 2vw, 1.75rem);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 40px) var(--section-padding);
+}
+
+/* ---- Post card ---- */
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--color-border-hover);
+}
+
+.cardCover {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cardCoverFallback {
+  width: 100%;
+  height: 200px;
+  background: var(--gradient-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cardCoverIcon {
+  font-size: 3rem;
+  opacity: 0.3;
+}
+
+.cardBody {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-text-primary);
+}
+
+.cardExcerpt {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  font-family: var(--font-mono);
+}
+
+.cardTags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.cardTag {
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  background: var(--color-accent-dim);
+  color: var(--color-text-accent);
+}
+
+/* ---- Empty state ---- */
+.empty {
+  text-align: center;
+  padding: var(--section-padding) 0;
+  color: var(--color-text-tertiary);
+  font-size: 1.1rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blogPage {
+    padding-top: 80px;
+  }
+}

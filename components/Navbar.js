@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { href: '/specs', label: 'Specs' },
   { href: '/use-cases', label: 'Use Cases' },
   { href: '/faq', label: 'FAQ' },
+  { href: '/blog', label: 'Blog' },
 ];
 
 export default function Navbar() {
