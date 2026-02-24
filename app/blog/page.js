@@ -49,60 +49,47 @@ export default async function BlogPage() {
           {tags.length > 0 && (
             <div className={`${styles.tagBar} animate-on-scroll delay-1`}>
               {tags.map((tag) => (
-                <span key={tag} className={styles.tag}>
+                <span key={tag} className={styles.tagBtn}>
                   {tag}
                 </span>
               ))}
             </div>
           )}
-        </div>
 
-        {/* Post grid */}
-        <div className={styles.grid}>
-          {posts.map((post, i) => (
-            <Link
-              key={post.id}
-              href={`/blog/${post.slug}`}
-              className={`glass-card ${styles.card} animate-on-scroll delay-${Math.min(i + 1, 5)}`}
-            >
-              {post.cover ? (
-                <img
-                  src={fileUrl(post, post.cover)}
-                  alt={post.title}
-                  className={styles.cardCover}
-                  loading="lazy"
-                />
-              ) : (
-                <div className={styles.cardCoverFallback}>
-                  <span className={styles.cardCoverIcon}>🚴</span>
-                </div>
-              )}
-              <div className={styles.cardBody}>
-                <h2 className={styles.cardTitle}>{post.title}</h2>
-                {post.excerpt && (
-                  <p className={styles.cardExcerpt}>{post.excerpt}</p>
-                )}
-                <div className={styles.cardMeta}>
-                  <time>{formatDate(post.publishedAt)}</time>
+          {/* Post list (classic) */}
+          <div className={styles.postList}>
+            {posts.map((post, i) => (
+              <Link
+                key={post.id}
+                href={`/blog/${post.slug}`}
+                className={`${styles.postEntry} animate-on-scroll delay-${Math.min(i + 1, 5)}`}
+              >
+                <div className={styles.postMeta}>
+                  <time className={styles.postDate}>
+                    {formatDate(post.publishedAt)}
+                  </time>
                   {Array.isArray(post.tags) && post.tags.length > 0 && (
-                    <div className={styles.cardTags}>
-                      {post.tags.slice(0, 3).map((tag) => (
-                        <span key={tag} className={styles.cardTag}>
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                    <>
+                      <span className={styles.postDot} />
+                      <span className={styles.postTag}>
+                        {post.tags[0]}
+                      </span>
+                    </>
                   )}
                 </div>
-              </div>
-            </Link>
-          ))}
+                <h2 className={styles.postTitle}>{post.title}</h2>
+                {post.excerpt && (
+                  <p className={styles.postExcerpt}>{post.excerpt}</p>
+                )}
+              </Link>
+            ))}
 
-          {posts.length === 0 && (
-            <div className={styles.empty}>
-              <p>No posts yet. Stay tuned.</p>
-            </div>
-          )}
+            {posts.length === 0 && (
+              <div className={styles.empty}>
+                <p>No posts yet. Stay tuned.</p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
       <Footer />
