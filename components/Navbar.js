@@ -3,12 +3,14 @@
 import { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
 
+const SITE = 'https://didi.bike';
+
 const NAV_LINKS = [
-  { href: '/#sensor', label: 'The Sensor' },
-  { href: '/technology', label: 'Technology' },
-  { href: '/specs', label: 'Specs' },
-  { href: '/use-cases', label: 'Use Cases' },
-  { href: '/faq', label: 'FAQ' },
+  { href: `${SITE}/#sensor`, label: 'The Sensor' },
+  { href: `${SITE}/technology`, label: 'Technology' },
+  { href: `${SITE}/specs`, label: 'Specs' },
+  { href: `${SITE}/use-cases`, label: 'Use Cases' },
+  { href: `${SITE}/faq`, label: 'FAQ' },
   { href: 'https://blog.didi.bike', label: 'Blog' },
 ];
 
@@ -39,7 +41,7 @@ export default function Navbar() {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`} aria-label="Main navigation">
       <div className={`container ${styles.inner}`}>
-        <a href="/" className={styles.logo}>
+        <a href={SITE} className={styles.logo}>
           <img src="/logo-icon.png" alt="DIDI.BIKE" className={styles.logoImg} />
         </a>
 
@@ -52,7 +54,7 @@ export default function Navbar() {
             </li>
           ))}
           <li className={styles.ctaWrap}>
-            <a href="/#contact" className={`btn btn-primary ${styles.cta}`} onClick={(e) => handleLinkClick(e, '/#contact')}>
+            <a href={`${SITE}/#contact`} className={`btn btn-primary ${styles.cta}`} onClick={(e) => handleLinkClick(e, `${SITE}/#contact`)}>
               Get Sensor
             </a>
           </li>
