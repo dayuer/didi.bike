@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: `${post.title} | DIDI.BIKE Blog`,
       description: post.excerpt || post.title,
-      url: `https://blog.didi.bike/${slug}`,
+      url: `https://didi.bike/blog/${slug}`,
       type: "article",
       publishedTime: post.publishedAt,
     },
@@ -51,7 +51,7 @@ export default async function ArticlePage({ params }) {
             <div className={styles.notFound}>
               <h1>Post Not Found</h1>
               <p>The article you are looking for does not exist.</p>
-              <Link href="/" className="btn btn-secondary">
+              <Link href="/blog" className="btn btn-secondary">
                 ← Back to Blog
               </Link>
             </div>
@@ -70,7 +70,7 @@ export default async function ArticlePage({ params }) {
       <article className={styles.articlePage}>
         <div className={styles.articleContainer}>
           {/* Back link */}
-          <Link href="/" className={styles.backLink}>
+          <Link href="/blog" className={styles.backLink}>
             ← Back to Blog
           </Link>
 
